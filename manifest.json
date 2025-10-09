@@ -1,0 +1,67 @@
+{
+    "name": "app-geracao-peticao-dev",
+    "version": "1.0.0",
+    "description": "Geração de Petição Inicial – Which AI: Cria petições iniciais completas com base em fatos e fundamentos jurídicos",
+    "auth": {
+        "description": {
+            "title": "Configuração de Acesso",
+            "body": "Configure suas credenciais para acessar o serviço.",
+            "footer": "As credenciais são armazenadas com segurança.",
+            "link": ""
+        },
+        "params": [            {
+                "name": "whichToken",
+                "type": "string",
+                "inputType": "text",
+                "required": true,
+                "label": "Token do Which"
+            }       
+        ]
+    },
+    "functions": {        
+        "gerarPeticaoInicial": {
+            "script": "dist/gerarPeticaoInicial.js",
+            "description": "Gera petição inicial com base em fatos e fundamentos",
+            "category": "ia",            "values": {
+                "conteudo": "",
+                "modelo": "padrao"
+            },
+            "params": [
+                {
+                    "name": "conteudo",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Conteúdo ou dados"
+                },
+                {
+                    "name": "modelo",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": false,
+                    "label": "Modelo a ser utilizado"
+                }
+            ]        },
+        "revisarPeticao": {
+            "script": "dist/revisarPeticao.js",
+            "description": "Revisa petição gerada",
+            "category": "ia",
+            "values": {
+                "parametro": "valor"
+            },
+            "params": [
+                {
+                    "name": "parametro",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Parâmetro principal"
+                }
+            ]        }    },
+    "config": {
+        "timeout": 60000,
+        "max_retries": 3,
+        "cache_ttl": 3600
+    },
+    "mcp": true
+}
