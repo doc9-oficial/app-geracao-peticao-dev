@@ -9,22 +9,29 @@
             "footer": "As credenciais são armazenadas com segurança.",
             "link": ""
         },
-        "params": [            {
+        "params": [
+            {
                 "name": "whichToken",
                 "type": "string",
                 "inputType": "text",
                 "required": true,
                 "label": "Token do Which"
-            }       
+            }
         ]
     },
-    "functions": {        
+    "functions": {
         "gerarPeticaoInicial": {
             "script": "dist/gerarPeticaoInicial.js",
             "description": "Gera petição inicial com base em fatos e fundamentos",
-            "category": "ia",            "values": {
+            "category": "ia",
+            "values": {
                 "conteudo": "",
                 "modelo": "padrao"
+            },
+            "help": {
+                "title": "Geração de Petição Inicial",
+                "body": "Esta função utiliza inteligência artificial para criar uma petição inicial completa com base nos fatos e fundamentos jurídicos fornecidos. Você pode especificar o conteúdo e escolher um modelo padrão ou personalizado.",
+                "footer": "Certifique-se de revisar a petição gerada para garantir que todas as informações estejam corretas."
             },
             "params": [
                 {
@@ -41,13 +48,19 @@
                     "required": false,
                     "label": "Modelo a ser utilizado"
                 }
-            ]        },
+            ]
+        },
         "revisarPeticao": {
             "script": "dist/revisarPeticao.js",
             "description": "Revisa petição gerada",
             "category": "ia",
             "values": {
                 "parametro": "valor"
+            },
+            "help": {
+                "title": "Revisão de Petição",
+                "body": "Esta função utiliza inteligência artificial para revisar uma petição gerada com base nos parâmetros fornecidos. Insira o parâmetro principal para obter a revisão desejada.",
+                "footer": "Revise a petição revisada para garantir que todas as informações estejam corretas."
             },
             "params": [
                 {
@@ -57,7 +70,9 @@
                     "required": true,
                     "label": "Parâmetro principal"
                 }
-            ]        }    },
+            ]
+        }
+    },
     "config": {
         "timeout": 60000,
         "max_retries": 3,
