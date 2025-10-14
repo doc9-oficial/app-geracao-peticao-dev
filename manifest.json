@@ -21,6 +21,7 @@
     },
     "functions": {
         "gerarPeticaoInicial": {
+            "name": "Gerar Petição Inicial - Which AI",
             "script": "dist/gerarPeticaoInicial.js",
             "description": "Gera petição inicial com base em fatos e fundamentos",
             "category": "ia",
@@ -51,6 +52,7 @@
             ]
         },
         "revisarPeticao": {
+            "name": "Revisar Petição - Which AI",
             "script": "dist/revisarPeticao.js",
             "description": "Revisa petição gerada",
             "category": "ia",
